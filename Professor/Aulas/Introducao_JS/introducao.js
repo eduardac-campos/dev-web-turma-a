@@ -139,3 +139,8 @@ const objTeste = {
 
 objTeste.oi();
 objTeste.tchau();
+
+function toggleImage() {
+  let img = document.getElementById("minhaImagem");
+  img.style.display = img.style.display === "none" ? "block" : "none";
+}
