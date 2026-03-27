@@ -13,8 +13,20 @@ import HomeComponent from './components/HomeComponent.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    HomeComponent,
+  },
+  created() {
+    console.log("created");
+  },
+  mounted() {
+    console.log("mounted");
+  },
+  updated() {
+    console.log("uptade");
+  },
+  errorCaptured() {
+    console.log("errorCaptured");
+  },
 }
 </script>
 
