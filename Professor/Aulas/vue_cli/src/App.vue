@@ -6,9 +6,15 @@
     <br />
     <home-component />
     <br />
-    <usuario-component />
+    <usuario-component v-show="isUsuarioVisivel" />
     <br />
     <estilo-component />
+    <br />
+    <imagem-component
+      @visibilidade-img="escutarVisibilidadeImg"
+      larguraImg="300"
+      urlImg="https://i0.statig.com.br/bancodeimagens/2c/na/9i/2cna9ia94r2cseq9t93j52dgt.jpg"
+    />
   </div>
 </template>
 
@@ -16,6 +22,7 @@
 import HomeComponent from "./components/HomeComponent.vue";
 import UsuarioComponent from "./components/UsuarioComponent.vue";
 import EstiloComponent from "./components/EstiloComponent.vue";
+import ImagemComponent from "./components/ImagemComponent.vue";
 
 export default {
   name: "App",
@@ -23,6 +30,17 @@ export default {
     HomeComponent,
     UsuarioComponent,
     EstiloComponent,
+    ImagemComponent,
+  },
+  data() {
+    return {
+      isUsuarioVisivel: false,
+    };
+  },
+  methods: {
+    escutarVisibilidadeImg(isImgComponentVisivel) {
+      this.isUsuarioVisivel = !isImgComponentVisivel;
+    },
   },
   mounted() {
     console.log("mounted");
